@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Imad Al Deen Abu Alfa Portfolio</title>
+        <link rel="stylesheet" href="buttons.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <img class="logo" src="logo.svg" alt="Imad Logo" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+
+            <div class="nav-links">
+               <a href="javascript:void(0)" class="H4" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Home</a>
+               <a href="javascript:void(0)" class="H4" onclick="scrollToWork()">Work</a>
+               <a href="javascript:void(0)" class="H4" onclick="scrollToAbout()">Experience</a>
+            </div>
+
+            <button class="black-mid nav-cta">Get in Touch</button>
+
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="drawer-overlay" id="drawerOverlay"></div>
+
+        <nav class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+            <div class="drawer-header">
+                <img class="logo" src="logo.svg" alt="Imad Logo">
+                <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+            </div>
+            <div class="drawer-links">
+                <a href="javascript:void(0)" class="H4" onclick="closeDrawerAnd(() => window.scrollTo({ top: 0, behavior: 'smooth' }))">Home</a>
+                <a href="javascript:void(0)" class="H4" onclick="closeDrawerAnd(scrollToWork)">Work</a>
+                <a href="javascript:void(0)" class="H4" onclick="closeDrawerAnd(scrollToAbout)">Experience</a>
+            </div>
+            <button class="light-mid drawer-cta">Get in Touch</button>
+        </nav>
+
+        <div class="section1">
+            <div class="hero">
+                <div class="hero-sparkles" aria-hidden="true"></div>
+                <div class="herotext reveal">
+                    <a class="H1">I'm Imad, a UX/UI designer
+                      who likes making things make sense.</a>
+                    <p class="body-large">I care about the point where a design stops being a Figma file and has to actually work.</p>
+                    <button class="light-mid" onclick="scrollToWork()">View My Work</button>
+                </div>
+            </div>
+            <div class="hero2 reveal">
+                <img class="big-title" src="uxui.svg" alt="UX/UI Designer" style="width: 100%; height: auto;">
+            </div>
+        </div>
+
+        <div class="section2" id="work">
+            <div class="title-button reveal">
+                <a class="H0">WORK</a>
+                <a class="H0" style="color: var(--saffron);">'26</a>
+                <!--<button class="black-mid-outline">View All</button>-->
+            </div>
+            <div class="work-grid">
+
+                <div class="card reveal" onclick="window.open('Lost_&_Found_Case_Study.pdf#view=Fit', '_blank')">
+                    <div class="card-image-wrap">
+                        <div class="card-image-pan">
+                            <img class="card-image" src="Lost & Found Cover.webp" alt="Lost & Found">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <a class="H4">Lost & Found</a>
+                        <div class="tag-container">
+                          <span class="tag">UX/UI</span>
+                          <span class="tag">Mobile App</span>
+                          <span class="tag">Product Design</span>
+                          <span class="tag">AI Matching</span>
+                          <span class="tag">Privacy</span>
+                          <span class="tag">Personal Project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card reveal" onclick="window.open('Qareb_Case_Study.pdf#view=Fit', '_blank')">
+                    <div class="card-image-wrap">
+                        <div class="card-image-pan">
+                            <img class="card-image" src="Qareb Cover.webp" alt="Qareb">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <a class="H4">Qareb</a>
+                        <div class="tag-container">
+                          <span class="tag">UX/UI</span>
+                          <span class="tag">E-commerce</span>
+                          <span class="tag">Multi-vendor retail</span>
+                          <span class="tag">Logistics</span>
+                          <span class="tag">Live</span>
+                          <span class="tag">Niche</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="work-grid">
+
+                <div class="card reveal" onclick="window.open('Bitaqa_Admin_Portal_Case_Study.pdf#view=Fit', '_blank')">
+                    <div class="card-image-wrap">
+                        <div class="card-image-pan">
+                            <img class="card-image" src="Bitaqa Cover.webp" alt="Bitaqa">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <a class="H4">Bitaqa Admin Portal</a>
+                        <div class="tag-container">
+                          <span class="tag">UX/UI</span>
+                          <span class="tag">SAAS</span>
+                          <span class="tag">Digital Identity</span>
+                          <span class="tag">Redesign</span>
+                          <span class="tag">Design System</span>
+                          <span class="tag">Admin</span>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="card reveal">
+                    <div class="card-image-wrap">
+                        <div class="card-image-pan">
+                            <img class="card-image" src="alqadsiyah.webp" alt="Al Qadsiyah">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <a class="H4">Al Qadsiah FC - Multi-Platform Digital Experience</a>
+                        <div class="tag-container">
+                          <span class="tag">UX/UI</span>
+                          <span class="tag">API Portal</span>
+                          <span class="tag">End-To-End</span>
+                          <span class="tag">B2B Solution</span>
+                          <span class="tag">Design System</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="work-grid">
+
+                <div class="card reveal">
+                    <div class="card-image-wrap">
+                        <div class="card-image-pan">
+                            <img class="card-image" src="bloodmoon.webp" alt="Bloodmooon">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <a class="H4">Bloodmooon</a>
+                        <div class="tag-container">
+                          <span class="tag">UX/UI</span>
+                          <span class="tag">AI Chatbot</span>
+                          <span class="tag">Fintech</span>
+                          <span class="tag">Design System</span>
+                          <span class="tag">Award-Winning</span>
+                        </div>
+                    </div>
+                </div>
+              --> 
+            </div>
+
+            <section class="experience" id="about">
+              <div class="title-button reveal" style="margin-bottom:10px;">
+                <a class="section-heading">EXPERIENCE</a>
+              </div>
+              <div class="exp-row reveal">
+                <div class="exp-company">iSolution</div>
+                <div class="exp-role">UX/UI Designer</div>
+                <div class="exp-dates">Dec 2023 – Oct 2025</div>
+              </div>
+              <div class="exp-row reveal">
+                <div class="exp-company">Wall Street English KSA</div>
+                <div class="exp-role">UX/UI Designer – Graphic Designer</div>
+                <div class="exp-dates">Oct 2023 – Jul 2024</div>
+              </div>
+              <div class="exp-row reveal">
+                <div class="exp-company">Maxiphy</div>
+                <div class="exp-role">UX/UI Design Intern</div>
+                <div class="exp-dates">Jun 2023 – Aug 2023</div>
+              </div>
+              <div class="exp-row reveal">
+                <div class="exp-company">Exposure Media</div>
+                <div class="exp-role">UX/UI – Graphic Design Intern</div>
+                <div class="exp-dates">Apr 2023 – May 2023</div>
+              </div>
+              <div class="exp-row reveal">
+                <div class="exp-company">Marketarta</div>
+                <div class="exp-role">Graphic Designer/Assistant</div>
+                <div class="exp-dates">Dec 2021 – Aug 2022</div>
+              </div>
+            </section>
+
+            <script>
+              const hero = document.querySelector('.hero');
+            
+              if (hero && window.matchMedia('(pointer: fine)').matches) {
+            
+                let targetX = 50;
+                let targetY = 50;
+            
+                let currentX = 50;
+                let currentY = 50;
+            
+                const followSpeed = 0.08;
+            
+                hero.addEventListener('pointermove', (event) => {
+                  const rect = hero.getBoundingClientRect();
+            
+                  targetX =
+                    ((event.clientX - rect.left) / rect.width) * 100;
+            
+                  targetY =
+                    ((event.clientY - rect.top) / rect.height) * 100;
+            
+                  hero.style.setProperty('--hero-glow-opacity', '1');
+                });
+            
+                hero.addEventListener('pointerleave', () => {
+                  hero.style.setProperty('--hero-glow-opacity', '0');
+                });
+            
+                function animateSpotlight() {
+            
+                  currentX += (targetX - currentX) * followSpeed;
+                  currentY += (targetY - currentY) * followSpeed;
+            
+                  hero.style.setProperty(
+                    '--hero-mx',
+                    `${currentX}%`
+                  );
+            
+                  hero.style.setProperty(
+                    '--hero-my',
+                    `${currentY}%`
+                  );
+            
+                  requestAnimationFrame(animateSpotlight);
+                }
+            
+                animateSpotlight();
+              }
+            </script>
+
+            <script>
+              const sparkleContainer =
+                document.querySelector('.hero-sparkles');
+            
+              if (sparkleContainer) {
+            
+                const sparkleCount = 26;
+            
+                for (let i = 0; i < sparkleCount; i++) {
+            
+                  const sparkle = document.createElement('span');
+            
+                  sparkle.classList.add('hero-sparkle');
+            
+                  const size =
+                    Math.random() * 2 + 1.5;
+            
+                  const x =
+                    Math.random() * 100;
+            
+                  const duration =
+                    Math.random() * 8 + 9;
+            
+                  const delay =
+                    Math.random() * -15;
+            
+                  const drift =
+                    Math.random() * 100 - 50;
+            
+                  const opacity =
+                    Math.random() * 0.35 + 0.2;
+            
+                  sparkle.style.setProperty(
+                    '--size',
+                    `${size}px`
+                  );
+            
+                  sparkle.style.setProperty(
+                    '--x',
+                    `${x}%`
+                  );
+            
+                  sparkle.style.setProperty(
+                    '--duration',
+                    `${duration}s`
+                  );
+            
+                  sparkle.style.setProperty(
+                    '--delay',
+                    `${delay}s`
+                  );
+            
+                  sparkle.style.setProperty(
+                    '--drift',
+                    `${drift}px`
+                  );
+            
+                  sparkle.style.setProperty(
+                    '--opacity',
+                    opacity
+                  );
+            
+                  sparkleContainer.appendChild(sparkle);
+                }
+              }
+            </script>
+            
+        </div>
+
+        <footer class="site-footer">
+          <div class="footer-sparkles" aria-hidden="true"></div>
+            <div class="footer-container">
+                <!-- Left Side: Gradient Glass Text -->
+                <div class="footer-left reveal">
+                    <h2 class="glass-text">Let's<br>work<br>together.</h2>
+                </div>
+
+                <!-- Right Side: Contact & Socials Only -->
+                <div class="footer-right reveal">
+                    <div class="footer-section">
+                        <h2>Contact & Socials</h2>
+                        <div class="footer-links">
+                            <a href="mailto:imad.abualfa.apps@gmail.com" class="email-link">imad.abualfa.apps@gmail.com</a>
+                            <a href="https://www.linkedin.com/in/imad-al-deen-abu-alfa/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+          const footerSparkleContainer =
+            document.querySelector('.footer-sparkles');
+        
+          if (footerSparkleContainer) {
+        
+            const footerSparkleCount = 20;
+        
+            for (let i = 0; i < footerSparkleCount; i++) {
+        
+              const sparkle = document.createElement('span');
+        
+              sparkle.classList.add('hero-sparkle');
+        
+              const size =
+                Math.random() * 2 + 1.5;
+        
+              const x =
+                Math.random() * 100;
+        
+              const duration =
+                Math.random() * 8 + 9;
+        
+              const delay =
+                Math.random() * -15;
+        
+              const drift =
+                Math.random() * 100 - 50;
+        
+              const opacity =
+                Math.random() * 0.35 + 0.2;
+        
+              sparkle.style.setProperty(
+                '--size',
+                `${size}px`
+              );
+        
+              sparkle.style.setProperty(
+                '--x',
+                `${x}%`
+              );
+        
+              sparkle.style.setProperty(
+                '--duration',
+                `${duration}s`
+              );
+        
+              sparkle.style.setProperty(
+                '--delay',
+                `${delay}s`
+              );
+        
+              sparkle.style.setProperty(
+                '--drift',
+                `${drift}px`
+              );
+        
+              sparkle.style.setProperty(
+                '--opacity',
+                opacity
+              );
+        
+              footerSparkleContainer.appendChild(sparkle);
+            }
+          }
+        </script>
+
+        <script src="cursor.js"></script>
+        <script src="email-copy.js"></script>
+
+        <script>
+              /* =========================================================
+                 OFFSET SCROLLING LOGIC (-80px Navbar Height)
+                 ========================================================= */
+              function scrollToSection(id) {
+                const targetSection = document.getElementById(id);
+
+                if (targetSection) {
+                  const elementPosition = targetSection.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - 80; // 80px navbar offset
+
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }
+
+              // Section helpers
+              function scrollToWork() {
+                scrollToSection('work');
+              }
+
+              function scrollToAbout() {
+                scrollToSection('about');
+              }
+
+              /* =========================================================
+                 MOBILE DRAWER LOGIC
+                 ========================================================= */
+              const hamburger = document.getElementById('hamburger');
+              const drawer = document.getElementById('mobile-drawer');
+              const overlay = document.getElementById('drawerOverlay');
+              const drawerClose = document.getElementById('drawerClose');
+
+              function openDrawer() {
+                drawer.classList.add('open');
+                overlay.classList.add('open');
+                hamburger.classList.add('active');
+                hamburger.setAttribute('aria-expanded', 'true');
+                drawer.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+              }
+
+              function closeDrawer() {
+                drawer.classList.remove('open');
+                overlay.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                drawer.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+              }
+
+              function closeDrawerAnd(fn) {
+                closeDrawer();
+                setTimeout(fn, 300);
+              }
+
+              hamburger.addEventListener('click', () => {
+                drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+              });
+              drawerClose.addEventListener('click', closeDrawer);
+              overlay.addEventListener('click', closeDrawer);
+
+              /* =========================================================
+                 CARD IMAGE PARALLAX
+                 ========================================================= */
+              const MAX_PARALLAX = 10; // px
+
+              document.querySelectorAll('.card-image-wrap').forEach(wrap => {
+                wrap.addEventListener('mousemove', (e) => {
+                  const rect = wrap.getBoundingClientRect();
+                  const px = ((e.clientX - rect.left) / rect.width - 0.5) * MAX_PARALLAX;
+                  const py = ((e.clientY - rect.top) / rect.height - 0.5) * MAX_PARALLAX;
+                  wrap.style.setProperty('--px', px.toFixed(2));
+                  wrap.style.setProperty('--py', py.toFixed(2));
+                });
+
+                wrap.addEventListener('mouseleave', () => {
+                  wrap.style.setProperty('--px', 0);
+                  wrap.style.setProperty('--py', 0);
+                });
+              });
+
+              /* =========================================================
+                 SCROLL FADE-IN REVEAL
+                 ========================================================= */
+              const revealEls = document.querySelectorAll('.reveal');
+
+              if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                  entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                      entry.target.style.transitionDelay = (i % 3) * 60 + 'ms';
+                      entry.target.classList.add('in-view');
+                      revealObserver.unobserve(entry.target);
+                    }
+                  });
+                }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+                revealEls.forEach(el => revealObserver.observe(el));
+              } else {
+                revealEls.forEach(el => el.classList.add('in-view'));
+              }
+
+              /* =========================================================
+                 PAGE LOAD & SCROLL RESTORATION LOGIC
+                 ========================================================= */
+              window.addEventListener('beforeunload', () => {
+                sessionStorage.setItem('scrollPos', window.scrollY);
+              });
+
+              window.addEventListener('load', () => {
+                const hash = window.location.hash.replace('#', '');
+
+                // Handles direct URL landings like site.com/#work or site.com/#about
+                if (hash && document.getElementById(hash)) {
+                  if ('scrollRestoration' in history) {
+                    history.scrollRestoration = 'manual';
+                  }
+                  sessionStorage.removeItem('scrollPos');
+
+                  setTimeout(() => {
+                    scrollToSection(hash);
+                  }, 50);
+                } else {
+                  // Standard page refresh restoration
+                  const scrollPos = sessionStorage.getItem('scrollPos');
+                  if (scrollPos) {
+                    window.scrollTo(0, parseInt(scrollPos, 10));
+                    sessionStorage.removeItem('scrollPos');
+                  }
+                }
+              });
+            </script>
+
+
+    </body>
+</html>
