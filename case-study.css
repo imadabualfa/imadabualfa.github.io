@@ -1,0 +1,112 @@
+/* =========================================================
+   CASE STUDY PAGES
+   ========================================================= */
+
+
+.case-study {
+    width: 100%;
+    background: var(--ink);
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    html {
+        scroll-snap-type: y proximity;
+
+        /*
+        Navbar is 80px tall.
+        This prevents snapped slides
+        from hiding behind it.
+        */
+        scroll-padding-top: 80px;
+    }
+
+
+    .case-study-slide-wrap {
+        width: 100%;
+
+        height: calc(100dvh - 80px);
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        background: var(--ink);
+
+        scroll-snap-align: start;
+
+        overflow: hidden;
+    }
+
+
+    .case-study-slide {
+        display: block;
+
+        width: auto;
+        height: auto;
+
+        max-width: 100%;
+        max-height: calc(100dvh - 80px);
+
+        object-fit: contain;
+    }
+
+
+    /*
+    Don't force the footer
+    into the snapping behaviour.
+    */
+    .site-footer {
+        scroll-snap-align: none;
+    }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    html {
+        scroll-snap-type: none;
+    }
+
+
+    .case-study {
+        width: 100%;
+    }
+
+
+    .case-study-slide-wrap {
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        background: var(--ink);
+
+        overflow: hidden;
+    }
+
+
+    .case-study-slide {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        max-width: none;
+        max-height: none;
+    }
+
+}
