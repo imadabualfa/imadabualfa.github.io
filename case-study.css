@@ -137,15 +137,12 @@
 .case-study-download {
     text-decoration: none;
     width: fit-content;
+    white-space: nowrap;
     gap: 8px;
 }
 
 .download-icon {
     width: 16px;
     height: 16px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    flex-shrink: 0;
 }
