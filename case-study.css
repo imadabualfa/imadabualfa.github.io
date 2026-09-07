@@ -2,10 +2,9 @@
    CASE STUDY PAGES
    ========================================================= */
 
-
 .case-study {
     width: 100%;
-    background: var(--ink);
+    box-sizing: border-box;
 }
 
 
@@ -16,32 +15,39 @@
 @media (min-width: 769px) {
 
     html {
-        scroll-snap-type: y proximity;
-
-        /*
-        Navbar is 80px tall.
-        This prevents snapped slides
-        from hiding behind it.
-        */
+        scroll-snap-type: y mandatory;
         scroll-padding-top: 80px;
+    }
+
+
+    .case-study {
+        padding-top: 24px;
+        padding-bottom: 48px;
     }
 
 
     .case-study-slide-wrap {
         width: 100%;
 
+        /*
+        Each slide still gets one monitor-height area,
+        minus the navbar.
+        */
         height: calc(100dvh - 80px);
 
-        display: flex;
+        box-sizing: border-box;
 
+        /*
+        Creates breathing room between slides.
+        */
+        padding: 20px 32px;
+
+        display: flex;
         align-items: center;
         justify-content: center;
 
-        background: var(--ink);
-
         scroll-snap-align: start;
-
-        overflow: hidden;
+        scroll-snap-stop: always;
     }
 
 
@@ -52,18 +58,18 @@
         height: auto;
 
         max-width: 100%;
-        max-height: calc(100dvh - 80px);
+        max-height: 100%;
 
         object-fit: contain;
     }
 
 
     /*
-    Don't force the footer
-    into the snapping behaviour.
+    Lets the footer become a natural final
+    snapping destination too.
     */
     .site-footer {
-        scroll-snap-align: none;
+        scroll-snap-align: start;
     }
 
 }
@@ -83,19 +89,19 @@
 
     .case-study {
         width: 100%;
+
+        padding-top: 16px;
+        padding-bottom: 32px;
     }
 
 
     .case-study-slide-wrap {
         width: 100%;
-
         height: auto;
 
-        min-height: 0;
+        box-sizing: border-box;
 
-        background: var(--ink);
-
-        overflow: hidden;
+        padding: 8px 16px;
     }
 
 
