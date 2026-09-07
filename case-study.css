@@ -116,3 +116,22 @@
     }
 
 }
+
+.case-study-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 32px 0;
+}
+
+.case-study-download {
+    text-decoration: none;
+    width: fit-content;
+}
+
+@media (max-width: 768px) {
+
+    .case-study-actions {
+        padding: 16px 16px 0;
+    }
+
+}
