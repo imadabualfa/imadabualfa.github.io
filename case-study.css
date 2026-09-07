@@ -120,7 +120,19 @@
 .case-study-actions {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 32px 0;
+
+    width: min(
+        calc(100% - 64px),
+        calc(177.78dvh - 213.33px)
+    );
+
+    margin: 0 auto;
+    padding: 20px 0 0;
+
+    box-sizing: border-box;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .case-study-download {
@@ -131,7 +143,11 @@
 @media (max-width: 768px) {
 
     .case-study-actions {
+        width: auto;
+        margin: 0;
         padding: 16px 16px 0;
+
+        scroll-snap-align: none;
     }
 
 }
