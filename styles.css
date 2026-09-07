@@ -432,6 +432,14 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+
+    .hero::after {
+        display: none;
+    }
+
+}
+
 .herotext {
   width: 100%;
   max-width: 700px;
