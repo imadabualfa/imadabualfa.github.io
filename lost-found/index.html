@@ -300,6 +300,13 @@
         </a>
     </div>
 
+    <button
+    class="scroll-top-button"
+    id="scrollTopButton"
+    aria-label="Back to top"
+    >
+        ↑
+    </button>
 
     <!-- =========================
          FOOTER
@@ -624,6 +631,48 @@
 
     </script>
 
+    <!-- =========================
+         SCROLL TO TOP BUTTON
+         ========================= -->
+
+         <script>
+             const scrollTopButton =
+                 document.getElementById('scrollTopButton');
+         
+             const footer =
+                 document.querySelector('.site-footer');
+         
+         
+             const footerObserver =
+                 new IntersectionObserver((entries) => {
+         
+                     entries.forEach((entry) => {
+         
+                         if (entry.isIntersecting) {
+                             scrollTopButton.classList.add('visible');
+                         } else {
+                             scrollTopButton.classList.remove('visible');
+                         }
+         
+                     });
+         
+                 }, {
+                     threshold: 0.05
+                 });
+         
+         
+             footerObserver.observe(footer);
+         
+         
+             scrollTopButton.addEventListener('click', () => {
+         
+                 window.scrollTo({
+                     top: 0,
+                     behavior: 'smooth'
+                 });
+         
+             });
+         </script>
 
 </body>
 
