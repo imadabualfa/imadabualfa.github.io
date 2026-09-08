@@ -709,64 +709,10 @@
     
         scrollTopButton.addEventListener('click', () => {
     
-            const html = document.documentElement;
-    
-            const startY = window.scrollY;
-    
-            const targetY =
-                firstSlide.getBoundingClientRect().top
-                + window.scrollY
-                - 80;
-    
-            const distance = targetY - startY;
-    
-            const duration = 1100;
-            const startTime = performance.now();
-    
-            /* Temporarily disable CSS smooth scrolling + snapping */
-            const oldScrollBehavior = html.style.scrollBehavior;
-            const oldSnapType = html.style.scrollSnapType;
-    
-            html.style.scrollBehavior = 'auto';
-            html.style.scrollSnapType = 'none';
-    
-    
-            function easeOutCubic(t) {
-                return 1 - Math.pow(1 - t, 8);
-            }
-    
-    
-            function animate(currentTime) {
-    
-                const progress =
-                    Math.min((currentTime - startTime) / duration, 1);
-    
-                const eased =
-                    easeOutCubic(progress);
-    
-                window.scrollTo(
-                    0,
-                    startY + distance * eased
-                );
-    
-    
-                if (progress < 1) {
-    
-                    requestAnimationFrame(animate);
-    
-                } else {
-    
-                    window.scrollTo(0, targetY);
-    
-                    html.style.scrollBehavior = oldScrollBehavior;
-                    html.style.scrollSnapType = oldSnapType;
-    
-                }
-    
-            }
-    
-    
-            requestAnimationFrame(animate);
+            firstSlide.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
     
         });
     </script>
