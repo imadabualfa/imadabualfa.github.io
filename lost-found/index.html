@@ -686,14 +686,14 @@
     
     
             function easeOutCubic(t) {
-                return 1 - Math.pow(1 - t, 8);
+                return 1 - Math.pow(1 - t, 16);
             }
     
     
             function animate(currentTime) {
     
                 const progress =
-                    Math.min((currentTime - startTime) / duration, 21);
+                    Math.min((currentTime - startTime) / duration, 1);
     
                 const eased =
                     easeOutCubic(progress);
