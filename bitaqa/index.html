@@ -720,7 +720,7 @@
     
             const distance = targetY - startY;
     
-            const duration = 3000;
+            const duration = 6000;
             const startTime = performance.now();
     
             /* Temporarily disable CSS smooth scrolling + snapping */
@@ -732,7 +732,7 @@
     
     
             function easeOutCubic(t) {
-                return 1 - Math.pow(1 - t, 16);
+                return 1 - Math.pow(1 - t, 32);
             }
     
     
