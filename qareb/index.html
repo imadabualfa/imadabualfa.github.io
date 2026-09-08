@@ -708,6 +708,8 @@
     
         scrollTopButton.addEventListener('click', () => {
     
+            const html = document.documentElement;
+    
             const startY = window.scrollY;
     
             const targetY =
@@ -715,42 +717,53 @@
                 + window.scrollY
                 - 80;
     
-            const distance = startY - targetY;
+            const distance = targetY - startY;
     
-            const duration = 1100;
+            const duration = 900;
             const startTime = performance.now();
     
-            // Stop scroll snapping from interrupting the animation
-            document.documentElement.style.scrollSnapType = 'none';
+            /* Temporarily disable CSS smooth scrolling + snapping */
+            const oldScrollBehavior = html.style.scrollBehavior;
+            const oldSnapType = html.style.scrollSnapType;
     
-            function easeOutQuart(t) {
-                return 1 - Math.pow(1 - t, 4);
+            html.style.scrollBehavior = 'auto';
+            html.style.scrollSnapType = 'none';
+    
+    
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
             }
     
-            function animate(now) {
+    
+            function animate(currentTime) {
     
                 const progress =
-                    Math.min((now - startTime) / duration, 1);
+                    Math.min((currentTime - startTime) / duration, 1);
     
                 const eased =
-                    easeOutQuart(progress);
+                    easeOutCubic(progress);
     
                 window.scrollTo(
                     0,
-                    startY - (distance * eased)
+                    startY + distance * eased
                 );
     
+    
                 if (progress < 1) {
+    
                     requestAnimationFrame(animate);
+    
                 } else {
     
-                    // Land exactly on the first slide
                     window.scrollTo(0, targetY);
     
-                    // Restore your normal case-study snapping
-                    document.documentElement.style.scrollSnapType = '';
+                    html.style.scrollBehavior = oldScrollBehavior;
+                    html.style.scrollSnapType = oldSnapType;
+    
                 }
+    
             }
+    
     
             requestAnimationFrame(animate);
     
