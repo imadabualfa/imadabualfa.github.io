@@ -8,17 +8,35 @@
   const interactiveSelector =
     'a, button, .card, .tag, input, textarea, select, [onclick]';
 
+  // Start hidden until the mouse actually enters/moves on the page
+  cursor.style.opacity = '0';
+
+
+  function showCursor() {
+    cursor.style.opacity = '1';
+  }
+
+
+  function hideCursor() {
+    cursor.style.opacity = '0';
+    cursor.classList.remove('cursor-hover');
+  }
+
+
   document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
-    cursor.style.opacity = '1';
+
+    showCursor();
   });
+
 
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(interactiveSelector)) {
       cursor.classList.add('cursor-hover');
     }
   });
+
 
   document.addEventListener('mouseout', (e) => {
     if (
@@ -29,13 +47,24 @@
     }
   });
 
-  document.documentElement.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-    cursor.classList.remove('cursor-hover');
+
+  // Hide when mouse leaves the browser page
+  window.addEventListener('mouseout', (e) => {
+    if (!e.relatedTarget && !e.toElement) {
+      hideCursor();
+    }
   });
 
-  window.addEventListener('blur', () => {
-    cursor.style.opacity = '0';
-    cursor.classList.remove('cursor-hover');
+
+  // Hide when browser/tab loses focus
+  window.addEventListener('blur', hideCursor);
+
+
+  // Hide when switching tabs
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      hideCursor();
+    }
   });
+
 })();
