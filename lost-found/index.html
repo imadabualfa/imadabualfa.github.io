@@ -663,10 +663,51 @@
     
         scrollTopButton.addEventListener('click', () => {
     
-            firstSlide.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            const startY = window.scrollY;
+    
+            const targetY =
+                firstSlide.getBoundingClientRect().top
+                + window.scrollY
+                - 80;
+    
+            const distance = startY - targetY;
+    
+            const duration = 1100;
+            const startTime = performance.now();
+    
+            // Stop scroll snapping from interrupting the animation
+            document.documentElement.style.scrollSnapType = 'none';
+    
+            function easeOutQuart(t) {
+                return 1 - Math.pow(1 - t, 4);
+            }
+    
+            function animate(now) {
+    
+                const progress =
+                    Math.min((now - startTime) / duration, 1);
+    
+                const eased =
+                    easeOutQuart(progress);
+    
+                window.scrollTo(
+                    0,
+                    startY - (distance * eased)
+                );
+    
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+    
+                    // Land exactly on the first slide
+                    window.scrollTo(0, targetY);
+    
+                    // Restore your normal case-study snapping
+                    document.documentElement.style.scrollSnapType = '';
+                }
+            }
+    
+            requestAnimationFrame(animate);
     
         });
     </script>
