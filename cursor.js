@@ -5,11 +5,13 @@
   cursor.id = 'custom-cursor';
   document.body.appendChild(cursor);
 
-  const interactiveSelector = 'a, button, .card, .tag, input, textarea, select, [onclick]';
+  const interactiveSelector =
+    'a, button, .card, .tag, input, textarea, select, [onclick]';
 
   document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
+    cursor.style.opacity = '1';
   });
 
   document.addEventListener('mouseover', (e) => {
@@ -19,8 +21,21 @@
   });
 
   document.addEventListener('mouseout', (e) => {
-    if (e.target.closest(interactiveSelector) && !e.relatedTarget?.closest(interactiveSelector)) {
+    if (
+      e.target.closest(interactiveSelector) &&
+      !e.relatedTarget?.closest(interactiveSelector)
+    ) {
       cursor.classList.remove('cursor-hover');
     }
+  });
+
+  document.documentElement.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+    cursor.classList.remove('cursor-hover');
+  });
+
+  window.addEventListener('blur', () => {
+    cursor.style.opacity = '0';
+    cursor.classList.remove('cursor-hover');
   });
 })();
