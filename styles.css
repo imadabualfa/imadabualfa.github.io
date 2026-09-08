@@ -92,6 +92,10 @@ a {
   border-color: #FFFDF7;
 }
 
+#custom-cursor.cursor-hidden {
+  opacity: 0 !important;
+}
+
 /* ---------- COPY-EMAIL TOOLTIP & TOAST ---------- */
 #copy-tooltip {
   position: fixed;

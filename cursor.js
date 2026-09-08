@@ -9,16 +9,15 @@
     'a, button, .card, .tag, input, textarea, select, [onclick]';
 
   // Start hidden until the mouse actually enters/moves on the page
-  cursor.style.opacity = '0';
+  cursor.classList.add('cursor-hidden');
 
 
   function showCursor() {
-    cursor.style.opacity = '1';
+    cursor.classList.remove('cursor-hidden');
   }
-
-
+  
   function hideCursor() {
-    cursor.style.opacity = '0';
+    cursor.classList.add('cursor-hidden');
     cursor.classList.remove('cursor-hover');
   }
 
