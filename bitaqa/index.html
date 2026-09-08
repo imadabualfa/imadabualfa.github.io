@@ -707,17 +707,16 @@
         scrollTopButton.addEventListener('click', () => {
     
             const startPosition = window.scrollY;
-            const duration = 1100;
+            const duration = 900;
             const startTime = performance.now();
     
-            /* Temporarily stop scroll snapping from fighting the animation */
-            const oldSnap = document.documentElement.style.scrollSnapType;
+            const oldSnap =
+                document.documentElement.style.scrollSnapType;
+    
             document.documentElement.style.scrollSnapType = 'none';
     
-            function easeInOutCubic(t) {
-                return t < 0.5
-                    ? 4 * t * t * t
-                    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            function easeOutCubic(t) {
+                return 1 - Math.pow(1 - t, 3);
             }
     
             function animateScroll(currentTime) {
@@ -727,18 +726,19 @@
                 const progress =
                     Math.min(elapsed / duration, 1);
     
-                const easedProgress =
-                    easeInOutCubic(progress);
+                const eased =
+                    easeOutCubic(progress);
     
                 window.scrollTo(
                     0,
-                    startPosition * (1 - easedProgress)
+                    startPosition * (1 - eased)
                 );
     
                 if (progress < 1) {
                     requestAnimationFrame(animateScroll);
                 } else {
-                    document.documentElement.style.scrollSnapType = oldSnap;
+                    document.documentElement.style.scrollSnapType =
+                        oldSnap;
                 }
             }
     
