@@ -703,45 +703,15 @@
         const scrollTopButton =
             document.getElementById('scrollTopButton');
     
+        const firstSlide =
+            document.querySelector('.case-study-slide-wrap');
+    
         scrollTopButton.addEventListener('click', () => {
     
-            const startPosition = window.scrollY;
-            const duration = 900;
-            const startTime = performance.now();
-    
-            const oldSnap =
-                document.documentElement.style.scrollSnapType;
-    
-            document.documentElement.style.scrollSnapType = 'none';
-    
-            function easeOutCubic(t) {
-                return 1 - Math.pow(1 - t, 3);
-            }
-    
-            function animateScroll(currentTime) {
-    
-                const elapsed = currentTime - startTime;
-    
-                const progress =
-                    Math.min(elapsed / duration, 1);
-    
-                const eased =
-                    easeOutCubic(progress);
-    
-                window.scrollTo(
-                    0,
-                    startPosition * (1 - eased)
-                );
-    
-                if (progress < 1) {
-                    requestAnimationFrame(animateScroll);
-                } else {
-                    document.documentElement.style.scrollSnapType =
-                        oldSnap;
-                }
-            }
-    
-            requestAnimationFrame(animateScroll);
+            firstSlide.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
     
         });
     </script>
