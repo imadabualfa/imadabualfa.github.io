@@ -168,57 +168,17 @@
     flex-shrink: 0;
 }
 
-.scroll-top-button {
-    display: none;
-}
-
-@media (min-width: 769px) {
-
-    .scroll-top-button {
-        position: fixed;
-        right: 32px;
-        bottom: 32px;
-
-        width: 44px;
-        height: 44px;
-
-        border: none;
-        border-radius: 6px;
-
-        background: var(--ink);
-        color: var(--saffron);
-
-        font-size: 20px;
-
-        align-items: center;
-        justify-content: center;
-
-        cursor: pointer;
-
-        opacity: 0;
-        visibility: hidden;
-
-        transition:
-            opacity 0.2s ease,
-            visibility 0.2s ease;
-
-        z-index: 200;
-    }
-
-    .scroll-top-button.visible {
-        display: flex;
-        opacity: 1;
-        visibility: visible;
-    }
+/* Hide scroll-to-top button on mobile only */
+@media (max-width: 768px) {
 
     .case-study-actions {
-    width: 100%;
-    padding: 32px 16px 48px;
+        width: 100%;
+        padding: 32px 16px 48px;
 
-    display: flex;
-    justify-content: center;
+        display: flex;
+        justify-content: center;
     }
-    
+
     .scroll-top-inline {
         display: none;
     }
