@@ -137,6 +137,10 @@
         background-color 0s 0.48s;
 }
 
+.cv-button {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
 
 .black-mid-outline {
     background-color: transparent;

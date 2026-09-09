@@ -721,11 +721,35 @@ a {
 }
 
 @media (max-width: 680px) {
-  .exp-row { grid-template-columns: 1fr; gap: 6px; text-align: left; }
-  .exp-dates { text-align: left; }
-  .exp-row:hover { padding-left: 0; }
-}
+    .exp-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        text-align: left;
+    }
 
+    .exp-dates {
+        text-align: left;
+    }
+
+    .exp-row:hover {
+        padding-left: 0;
+    }
+
+    .title-button {
+        gap: 16px;
+    }
+
+    .title-button .section-heading {
+        font-size: 32px;
+    }
+
+    .cv-button {
+        height: 42px;
+        padding: 0 16px;
+        font-size: 14px;
+        margin: 0;
+    }
+}
 /* ---------- FOOTER ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
