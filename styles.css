@@ -238,7 +238,7 @@ a {
 .logo-hover .logo-black {
   position: relative;
   opacity: 1;
-  transition: opacity 0.25s var(--ease);
+  transition: opacity 0.9s var(--ease);
 }
 
 .logo-hover .logo-yellow {
@@ -246,7 +246,7 @@ a {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 0.25s var(--ease);
+  transition: opacity 0.9s var(--ease);
 }
 
 .logo-hover:hover .logo-black {
