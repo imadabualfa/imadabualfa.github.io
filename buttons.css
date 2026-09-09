@@ -71,7 +71,6 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    text-decoration: none;
 
     background-color: var(--saffron);
     border: 2px solid transparent;
@@ -135,6 +134,10 @@
     transition:
         border-color 0.35s ease,
         background-color 0s 0.48s;
+}
+
+.cv-button {
+    text-decoration: none;
 }
 
 .black-mid-outline {
