@@ -246,7 +246,7 @@ a {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: opacity 3.0s var(--ease);
+  transition: opacity 1.5s var(--ease);
 }
 
 .logo-hover:hover .logo-black {
