@@ -71,6 +71,7 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
+    text-decoration: none;
 
     background-color: var(--saffron);
     border: 2px solid transparent;
