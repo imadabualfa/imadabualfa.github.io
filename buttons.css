@@ -138,8 +138,8 @@
 }
 
 .cv-button {
-    flex-shrink: 0;
     white-space: nowrap;
+    margin-left: auto;
 }
 
 .black-mid-outline {

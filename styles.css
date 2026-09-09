@@ -753,9 +753,8 @@ a {
 
 @media (max-width: 375px) {
     .title-button {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+        gap: 16px;
+        flex-wrap: wrap;
     }
 }
 
