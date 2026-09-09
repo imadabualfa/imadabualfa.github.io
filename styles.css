@@ -219,32 +219,42 @@ a {
   height: 42px;
   width: auto;
   cursor: pointer;
-  transition: opacity 0.3s ease;
 }
 
-.logo:hover {
+.logo-hover {
   position: relative;
-  display: inline-flex;
+  display: inline-block;
+  height: 42px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .logo-hover .logo {
-    display: block;
-    transition: opacity 0.25s var(--ease);
+  display: block;
+  height: 42px;
+  width: auto;
+}
+
+.logo-hover .logo-black {
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.25s var(--ease);
 }
 
 .logo-hover .logo-yellow {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
 }
 
 .logo-hover:hover .logo-black {
-    opacity: 0;
+  opacity: 0;
 }
 
 .logo-hover:hover .logo-yellow {
-    opacity: 1;
+  opacity: 1;
 }
 
 .nav-cta {
@@ -331,8 +341,8 @@ a {
 }
 
 .drawer-header .logo {
-  filter: invert(1) brightness(2);
-  height: 34px;
+    height: 34px;
+    filter: none;
 }
 
 .drawer-close {
