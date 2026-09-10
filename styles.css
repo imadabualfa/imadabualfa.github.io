@@ -409,7 +409,9 @@ a {
   text-align: center;
   color: #FFFDF7;
 
-  position: relative;
+  position: sticky;
+  top: 80px;
+  z-index: 1;
   overflow: hidden;
   isolation: isolate;
 
@@ -524,6 +526,20 @@ a {
   text-align: center;
 
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+.hero2,
+.section2 {
+    background-color: var(--cream);
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+
+    position: relative;
+    z-index: 2;
 }
 
 .big-title {
