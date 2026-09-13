@@ -793,8 +793,8 @@ a {
   right: -5%;
   width: 600px;
   height: 550px;
-  /*border-radius: 43% 57% 38% 62% / 55% 41% 59% 45%;
-  background: rgba(34, 34, 38, 0.4);*/
+  /*border-radius: 43% 57% 38% 62% / 55% 41% 59% 45%;*/
+  background: rgba(34, 34, 38, 0.4);
   filter: blur(100px);
   pointer-events: none;
   z-index: -1;
@@ -807,8 +807,8 @@ a {
   left: 10%;
   width: 600px;
   height: 500px;
-  /*border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
-  background: rgba(22, 22, 22, 0.8);*/
+  /*border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;*/
+  background: rgba(22, 22, 22, 0.8);
   filter: blur(120px);
   pointer-events: none;
   z-index: -1;
