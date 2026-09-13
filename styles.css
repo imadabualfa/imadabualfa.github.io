@@ -765,10 +765,10 @@ a {
   background-color: #0D0D0D;
 
   background-image:
-    linear-gradient(
+    /*linear-gradient(
       rgba(13, 13, 13, 0.9),
       rgba(13, 13, 13, 0.9)
-    ),
+    ),*/
     url("footerbg3.webp");
 
   background-size: cover;
