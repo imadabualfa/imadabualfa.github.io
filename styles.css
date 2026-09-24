@@ -794,8 +794,8 @@ a {
 
   background-image:
     linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.72)
     ),
     url("footerbg3.webp");
 
@@ -822,7 +822,7 @@ a {
   width: 600px;
   height: 550px;
   border-radius: 43% 57% 38% 62% / 55% 41% 59% 45%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.72);
   filter: blur(100px);
   pointer-events: none;
   z-index: -1;
@@ -836,7 +836,7 @@ a {
   width: 600px;
   height: 500px;
   border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.72);
   filter: blur(120px);
   pointer-events: none;
   z-index: -1;
