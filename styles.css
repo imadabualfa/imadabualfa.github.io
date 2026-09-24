@@ -406,7 +406,7 @@ a {
 
     object-fit: cover;
 
-    opacity: 0.5;
+    opacity: 0.2;
     mix-blend-mode: normal;
 
     pointer-events: none;
@@ -415,7 +415,7 @@ a {
 
 @media (max-width: 768px) {
     .hero-static {
-        opacity: 0.06;
+        opacity: 0.2;
     }
 }
 
