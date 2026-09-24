@@ -790,7 +790,7 @@ a {
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 .site-footer {
-  background-color: #0D0D0D;
+  background-color: rgba(13, 13, 13, 0.72);
 
   /*background-image:
     linear-gradient(
