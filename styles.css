@@ -397,6 +397,34 @@ a {
   initial-value: 40%;
 }
 
+.hero-static {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0.10;
+    mix-blend-mode: soft-light;
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .hero-static {
+        opacity: 0.06;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-static {
+        display: none;
+    }
+}
+
 .hero {
   display: flex;
   flex-direction: column;
