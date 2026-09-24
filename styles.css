@@ -406,8 +406,8 @@ a {
 
     object-fit: cover;
 
-    opacity: 0.10;
-    mix-blend-mode: soft-light;
+    opacity: 0.5;
+    mix-blend-mode: normal;
 
     pointer-events: none;
     z-index: 1;
