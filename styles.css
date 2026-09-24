@@ -790,12 +790,12 @@ a {
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 .site-footer {
-  background-color: #0D0D0D;
+  background-color: #000000;
 
   background-image:
     linear-gradient(
-      rgba(13, 13, 13, 0.9),
-      rgba(13, 13, 13, 0.9)
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.9)
     ),
     url("footerbg3.webp");
 
@@ -822,7 +822,7 @@ a {
   width: 600px;
   height: 550px;
   border-radius: 43% 57% 38% 62% / 55% 41% 59% 45%;
-  background: rgba(34, 34, 38, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   filter: blur(100px);
   pointer-events: none;
   z-index: -1;
@@ -836,7 +836,7 @@ a {
   width: 600px;
   height: 500px;
   border-radius: 60% 40% 70% 30% / 40% 60% 30% 70%;
-  background: rgba(22, 22, 22, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   filter: blur(120px);
   pointer-events: none;
   z-index: -1;
