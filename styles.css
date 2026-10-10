@@ -73,22 +73,36 @@ a {
   left: 0;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
+  border-radius: 1.5px;
   background-color: #FFFDF7;
   border: 1.5px solid #0D0D0D;
   opacity: 1;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  transition: width 0.25s var(--ease), height 0.25s var(--ease), opacity 0.2s ease,
-    background-color 0.25s var(--ease), border-color 0.25s var(--ease);
+  transition:
+    width 0.2s var(--ease),
+    height 0.2s var(--ease),
+    opacity 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
+/* Smaller square over clickable elements */
 #custom-cursor.cursor-hover {
-  width: 25.6px;
-  height: 25.6px;
-  opacity: 0.6;
-  background-color: #0D0D0D;
+  width: 13px;
+  height: 13px;
+  opacity: 1;
+  background-color: rgba(13, 13, 13, 0.6);
+  border-color: #FFFDF7;
+}
+
+/* Squeezed square over text */
+#custom-cursor.cursor-text {
+  width: 6px;
+  height: 20px;
+  opacity: 1;
+  background-color: rgba(13, 13, 13, 0.6);
   border-color: #FFFDF7;
 }
 
