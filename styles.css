@@ -359,7 +359,7 @@ a {
   right: 0;
   height: 100dvh;
   width: min(320px, 82vw);
-  background: rgba(255, 253, 247, 0.76);
+  background: rgba(255, 253, 247, 0.64);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   color: var(--ink);
