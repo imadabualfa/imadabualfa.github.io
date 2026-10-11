@@ -27,7 +27,9 @@
                <a href="javascript:void(0)" class="H4" onclick="scrollToAbout()">Experience</a>
             </div>
 
-            <button class="black-mid nav-cta">Get in Touch</button>
+            <a class="nav-email email-link" href="mailto:imad.abualfa.apps@gmail.com">
+              imad.abualfa.apps@gmail.com
+            </a>
 
             <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
                 <span></span>
@@ -40,7 +42,7 @@
 
         <nav class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
             <div class="drawer-header">
-                <img class="logo" src="Logo-yellow.svg" alt="Imad Logo">
+                <img class="logo" src="Logo.svg" alt="Imad Logo">
                 <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
             </div>
             <div class="drawer-links">
@@ -48,9 +50,11 @@
                 <a href="javascript:void(0)" class="H4" onclick="closeDrawerAnd(scrollToWork)">Work</a>
                 <a href="javascript:void(0)" class="H4" onclick="closeDrawerAnd(scrollToAbout)">Experience</a>
             </div>
-            <button class="light-mid drawer-cta">Get in Touch</button>
+            <a class="drawer-email email-link" href="mailto:imad.abualfa.apps@gmail.com">
+              imad.abualfa.apps@gmail.com
+            </a>
         </nav>
-
+<!--
         <div class="section1">
             <div class="hero">
                 <video
@@ -74,13 +78,24 @@
                 <img class="big-title" src="uxui.svg" alt="UX/UI Designer" style="width: 100%; height: auto;">
             </div>
         </div>
-
+-->
+        <section class="homepage-intro">
+          <h1 class="H1">
+            I'm Imad, a UX/UI designer<br class="intro-break">
+            who likes making things make sense.
+          </h1>
+        
+          <p class="body-large">
+            I care about the point where a design stops being
+            a Figma file and has to actually work.
+          </p>
+        </section>
+        
         <div class="section2" id="work">
-            <div class="title-button reveal">
+            <!--<div class="title-button reveal">
                 <a class="H0">WORK</a>
                 <a class="H0" style="color: var(--saffron);">'26</a>
-                <!--<button class="black-mid-outline">View All</button>-->
-            </div>
+            </div>-->
             <div class="work-grid">
 
                 <div class="card reveal" onclick="window.location.href='lost-found/'">
@@ -462,7 +477,7 @@
 
                 if (targetSection) {
                   const elementPosition = targetSection.getBoundingClientRect().top;
-                  const offsetPosition = elementPosition + window.pageYOffset - 80; // 80px navbar offset
+                  const offsetPosition = elementPosition + window.pageYOffset - 64; // 64px navbar offset
 
                   window.scrollTo({
                     top: offsetPosition,

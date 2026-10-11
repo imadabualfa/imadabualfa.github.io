@@ -35,12 +35,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
     /* Create the vertical and horizontal intersecting grid lines */
-  background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(13, 13, 13, 0.06) 1px,
+      transparent 1px
+    );
   
-  /* Controls the size of the grid squares (change 40px to adjust size) */
   background-size: 40px 40px;
+}
+
+/* Subtle grain across the entire site */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.2;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
 }
 
 a {
@@ -99,8 +114,8 @@ a {
 
 /* Squeezed square over text */
 #custom-cursor.cursor-text {
-  width: 6px;
-  height: 20px;
+  width: 5px;
+  height: 22px;
   opacity: 1;
   background-color: rgba(13, 13, 13, 0.6);
   border-color: #FFFDF7;
@@ -120,7 +135,7 @@ a {
   color: var(--ink);
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 550;
   letter-spacing: 0.2px;
   padding: 6px 14px;
   border-radius: 20px;
@@ -172,7 +187,7 @@ a {
   justify-content: space-between;
   background-color: #FFFDF7;
   color: #0D0D0D;
-  height: 80px;
+  height: 64px;
   padding-left: 40px;
   padding-right: 40px;
   position: -webkit-sticky;
@@ -180,7 +195,6 @@ a {
   top: 0;
   z-index: 100;
   background: rgba(255, 253, 247, 0.8);
-  box-shadow: 0 1px 0 rgba(13, 13, 13, 0.06);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: none;
@@ -196,21 +210,21 @@ a {
   color: #0D0D0D;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 500;
-  font-size: 17px;
+  font-size: 14px;
   letter-spacing: 0.1px;
   text-decoration: none;
   transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
   cursor: pointer;
-  padding: 32px 22px;
+  padding: 22px 18px;
   position: relative;
 }
 
 .navbar .H4::after {
   content: '';
   position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 26px;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
   height: 2px;
 
   background: var(--saffron);
@@ -238,14 +252,14 @@ a {
 .logo-hover {
   position: relative;
   display: inline-block;
-  height: 42px;
+  height: 32px;
   cursor: pointer;
   flex-shrink: 0;
 }
 
 .logo-hover .logo {
   display: block;
-  height: 42px;
+  height: 32px;
   width: auto;
 }
 
@@ -331,13 +345,16 @@ a {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100%;
+  height: 100dvh;
   width: min(320px, 82vw);
-  background: var(--ink);
-  color: var(--cream);
+  background: rgba(255, 253, 247, 0.86);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--ink);
   display: flex;
   flex-direction: column;
-  padding: 24px 28px 40px;
+  padding: 16px 24px 28px;
+  border-left: 1px solid var(--hairline);
   transform: translateX(100%);
   transition: transform 0.4s var(--ease);
   z-index: 200;
@@ -355,15 +372,15 @@ a {
 }
 
 .drawer-header .logo {
-    height: 34px;
+    height: 32px;
     filter: none;
 }
 
 .drawer-close {
   background: transparent;
   border: none;
-  color: var(--cream);
-  font-size: 30px;
+  color: var(--ink);
+  font-size: 26px;
   line-height: 1;
   cursor: pointer;
   padding: 4px 8px;
@@ -377,11 +394,12 @@ a {
 }
 
 .drawer-links .H4 {
-  color: var(--cream);
-  font-size: 22px;
-  font-weight: 600;
-  padding: 16px 4px;
-  border-bottom: 1px solid rgba(255, 253, 247, 0.12);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hairline);
   cursor: pointer;
   text-decoration: none;
 }
@@ -1077,4 +1095,91 @@ a {
 
     opacity: 0;
   }
+}
+
+
+/* Compact homepage introduction */
+.homepage-intro {
+  padding: 72px 32px 40px;
+  color: var(--ink);
+}
+
+.homepage-intro .H1 {
+  display: block;
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  text-wrap: balance;
+}
+
+.homepage-intro .body-large {
+  max-width: 850px;
+  margin: 20px 0 0;
+  color: var(--muted, #4A463F);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .homepage-intro {
+    padding: 40px 20px 24px;
+  }
+
+  .homepage-intro .H1 {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  .homepage-intro .body-large {
+    margin-top: 16px;
+    font-size: 16px;
+  }
+
+  .homepage-intro .intro-break {
+    display: none;
+  }
+}
+
+/* Text selection */
+::selection {
+  color: var(--saffron);
+  background-color: rgba(214, 163, 58, 0.25);
+}
+
+/*Nav and drawer email*/
+.nav-email {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-email:hover {
+  color: var(--saffron);
+}
+
+@media (max-width: 900px) {
+  .nav-email {
+    display: none;
+  }
+}
+
+.drawer-email {
+  display: block;
+  margin-top: auto;
+  padding-top: 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.drawer-email:hover {
+  color: var(--saffron);
 }
