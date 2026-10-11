@@ -40,7 +40,7 @@ body {
   background-image:
     radial-gradient(
       circle,
-      rgba(13, 13, 13, 0.06) 1px,
+      rgba(13, 13, 13, 0.09) 1px,
       transparent 1px
     );
   
@@ -195,7 +195,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 253, 247, 0.8);
+  background: rgba(255, 253, 247, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: none;
