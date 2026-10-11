@@ -54,7 +54,7 @@
     .case-study-slide {
         display: block;
 
-        border-radius: 8px;
+        border-radius: 4px;
 
         width: auto;
         height: auto;
@@ -110,7 +110,7 @@
     .case-study-slide {
         display: block;
 
-        border-radius: 8px;
+        border-radius: 4px;
 
         width: 100%;
         height: auto;
