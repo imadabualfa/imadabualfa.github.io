@@ -10,6 +10,7 @@
 
     <link rel="icon" type="image/png" href="../favicon.png">
 
+    <script src="theme.js"></script>
     <link rel="stylesheet" href="../buttons.css">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../case-study.css">
@@ -51,23 +52,30 @@
 
         </div>
 
-        <a class="nav-email email-link" href="mailto:imad.abualfa.apps@gmail.com">
-          imad.abualfa.apps@gmail.com
-        </a>
-
-
-
-        <button
-            class="hamburger"
-            id="hamburger"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobile-drawer"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+          >
+            <span class="theme-moon" aria-hidden="true">☾</span>
+            <span class="theme-sun" aria-hidden="true">☀︎</span>
+          </button>
+        
+          <a
+            class="nav-email email-link"
+            href="mailto:imad.abualfa.apps@gmail.com"
+          >
+            imad.abualfa.apps@gmail.com
+          </a>
+        
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+        </div>
 
     </div>
 
