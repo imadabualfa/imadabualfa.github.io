@@ -51,8 +51,26 @@
 
     if (tooltip) {
       el.addEventListener('mousemove', (e) => {
-        tooltip.style.left = e.clientX + 'px';
-        tooltip.style.top = e.clientY + 'px';
+      const gap = 16;
+      const edge = 12;
+      const width = tooltip.offsetWidth;
+      const height = tooltip.offsetHeight;
+      
+      const left = Math.max(
+        edge,
+        Math.min(
+          e.clientX - width / 2,
+          window.innerWidth - width - edge
+        )
+      );
+      
+      const top =
+        e.clientY + gap + height > window.innerHeight - edge
+          ? e.clientY - height - gap
+          : e.clientY + gap;
+      
+      tooltip.style.left = left + 'px';
+      tooltip.style.top = Math.max(edge, top) + 'px';
       });
       el.addEventListener('mouseenter', () => {
         tooltip.classList.add('visible');
