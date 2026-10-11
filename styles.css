@@ -911,13 +911,13 @@ a {
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
-    margin: 24px 20px 0;
+    margin: 16px 20px 0;
     padding: 24px 0;
-    gap: 16px;
+    gap: 24px;
   }
 
   .footer-links {
-    gap: 16px;
+    gap: 24px;
   }
 }
 
@@ -936,18 +936,6 @@ a {
   }
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 50px;
-  }
-  .glass-text {
-    font-size: 46px;
-  }
-  .site-footer {
-    padding: 80px 8%;
-  }
-}
 
 @media (max-width: 640px) {
 
