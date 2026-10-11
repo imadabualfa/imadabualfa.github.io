@@ -52,9 +52,9 @@ body::after {
   inset: 0;
   z-index: 9998;
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 0.04;
 
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='0 0 0 0 0 1 1 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
 
@@ -138,7 +138,7 @@ a {
   font-weight: 550;
   letter-spacing: 0.2px;
   padding: 6px 14px;
-  border-radius: 20px;
+  border-radius: 2px;
   white-space: nowrap;
   pointer-events: none;
   z-index: 10000;
@@ -165,10 +165,9 @@ a {
   color: var(--ink);
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
-  font-weight: 600;
-  padding: 14px 26px;
-  border-radius: 40px;
-  box-shadow: 0 2px 8px rgba(13, 13, 13, 0.22);
+  font-weight: 550;
+  padding: 8px 16px;
+  border-radius: 2px;
   pointer-events: none;
   z-index: 10001;
   opacity: 0;
