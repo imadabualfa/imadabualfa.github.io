@@ -703,6 +703,7 @@ a {
 
 .card .H4 {
   color: var(--ink);
+  font-size: 18px;
 
   transition:
     color 0.3s var(--ease);
@@ -1048,8 +1049,8 @@ a {
   display: block;
   max-width: 850px;
   margin: 0;
-  font-size: clamp(28px, 3.5vw, 46px);
-  font-weight: 700;
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.8px;
   text-wrap: balance;
@@ -1059,7 +1060,7 @@ a {
   max-width: 850px;
   margin: 20px 0 0;
   color: var(--muted, #4A463F);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.65;
 }
 
@@ -1069,7 +1070,7 @@ a {
   }
 
   .homepage-intro .H1 {
-    font-size: 30px;
+    font-size: 28px;
     letter-spacing: -0.5px;
   }
 
