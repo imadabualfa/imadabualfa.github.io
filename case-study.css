@@ -63,6 +63,9 @@
         max-height: 100%;
 
         object-fit: contain;
+
+        position: relative;
+        z-index: 2;
     }
 
 
@@ -117,6 +120,9 @@
 
         max-width: none;
         max-height: none;
+
+        position: relative;
+        z-index: 2;
     }
 
 }
