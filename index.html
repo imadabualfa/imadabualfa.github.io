@@ -551,36 +551,7 @@
               } else {
                 revealEls.forEach(el => el.classList.add('in-view'));
               }
-
-              /* =========================================================
-                 PAGE LOAD & SCROLL RESTORATION LOGIC
-                 ========================================================= */
-              window.addEventListener('beforeunload', () => {
-                sessionStorage.setItem('scrollPos', window.scrollY);
-              });
-
-              window.addEventListener('load', () => {
-                const hash = window.location.hash.replace('#', '');
-
-                // Handles direct URL landings like site.com/#work or site.com/#about
-                if (hash && document.getElementById(hash)) {
-                  if ('scrollRestoration' in history) {
-                    history.scrollRestoration = 'manual';
-                  }
-                  sessionStorage.removeItem('scrollPos');
-
-                  setTimeout(() => {
-                    scrollToSection(hash);
-                  }, 50);
-                } else {
-                  // Standard page refresh restoration
-                  const scrollPos = sessionStorage.getItem('scrollPos');
-                  if (scrollPos) {
-                    window.scrollTo(0, parseInt(scrollPos, 10));
-                    sessionStorage.removeItem('scrollPos');
-                  }
-                }
-              });
+              
             </script>
 
 
