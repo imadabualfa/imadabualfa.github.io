@@ -904,7 +904,7 @@ html[data-theme="dark"] .theme-sun {
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
 .experience .section-heading {
