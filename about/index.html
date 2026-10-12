@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Imad Al Deen Abu Alfa</title>
+
+  <link rel="icon" type="image/png" href="../favicon.png">
+
+  <script src="../theme.js"></script>
+  <link rel="stylesheet" href="../buttons.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo-hover" onclick="window.location.href='../index.html'">
+      <img class="logo logo-black" src="../Logo.svg" alt="Imad Logo">
+      <img class="logo logo-yellow" src="../Logo-yellow.svg" alt="">
+    </div>
+
+    <div class="nav-links">
+      <a href="../index.html" class="H4">Work</a>
+      <a href="./index.html" class="H4" aria-current="page">About</a>
+    </div>
+
+    <div class="nav-actions">
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to light mode"
+        aria-pressed="false"
+      >
+        <span class="theme-moon" aria-hidden="true">☾</span>
+        <span class="theme-sun" aria-hidden="true">☀︎</span>
+      </button>
+
+      <a
+        class="nav-email email-link"
+        href="mailto:imad.abualfa.apps@gmail.com"
+      >
+        imad.abualfa.apps@gmail.com
+      </a>
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <nav class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <img class="logo" src="../Logo.svg" alt="Imad Logo">
+      <button
+        class="drawer-close"
+        id="drawerClose"
+        aria-label="Close menu"
+      >&times;</button>
+    </div>
+
+    <div class="drawer-links">
+      <a href="../index.html" class="H4">Work</a>
+      <a href="./index.html" class="H4" aria-current="page">About</a>
+    </div>
+
+    <a
+      class="drawer-email email-link"
+      href="mailto:imad.abualfa.apps@gmail.com"
+    >
+      imad.abualfa.apps@gmail.com
+    </a>
+  </nav>
+
+  <main class="about-page">
+    <section class="about-intro">
+      <section class="about-intro">
+        <p>
+          I'm Imad, a UX/UI designer based in Beirut, working on digital products across web and mobile.
+        </p>
+
+        <p>
+          I enjoy the logic behind interfaces, especially working through how a feature should behave. 
+          I also know HTML and CSS, and have been putting them into practice on this portfolio with some help from AI. 
+          I’m curious about where AI can be useful in the wider UX/UI process too.
+        </p>
+
+        <p>
+          Outside of design, I'm a "decent" chess player, go for long walks, and work out.
+        </p>
+
+        <p>
+          Currently open to work. Feel free to reach out about a project, a role, or a game of chess.
+        </p>
+      </section>
+    </section>
+  
+    <section class="experience" id="about">
+      <section class="experience" id="about">
+        <div class="experience-header">
+          <a
+            class="experience-cv"
+            href="../Abu_Alfa_Imad_Al_Deen_CV_Public.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View CV ↗
+          </a>
+        </div>
+        <div class="exp-row">
+          <div class="exp-company">iSolution</div>
+          <div class="exp-role">UX/UI Designer</div>
+          <div class="exp-dates">Dec 2023 – Oct 2025</div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-company">Wall Street English KSA</div>
+          <div class="exp-role">UX/UI Designer – Graphic Designer</div>
+          <div class="exp-dates">Oct 2023 – Jul 2024</div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-company">Maxiphy</div>
+          <div class="exp-role">UX/UI Design Intern</div>
+          <div class="exp-dates">Jun 2023 – Aug 2023</div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-company">Exposure Media</div>
+          <div class="exp-role">UX/UI – Graphic Design Intern</div>
+          <div class="exp-dates">Apr 2023 – May 2023</div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-company">Marketarta</div>
+          <div class="exp-role">Graphic Designer/Assistant</div>
+          <div class="exp-dates">Dec 2021 – Aug 2022</div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <span class="footer-name">Imad Al Deen Abu Alfa</span>
+
+    <div class="footer-links">
+      <a
+        class="email-link"
+        href="mailto:imad.abualfa.apps@gmail.com"
+      >
+        imad.abualfa.apps@gmail.com
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/imad-al-deen-abu-alfa/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn ↗
+      </a>
+    </div>
+  </footer>
+
+  <script src="../cursor.js"></script>
+  <script src="../email-copy.js"></script>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const drawerClose = document.getElementById('drawerClose');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', function () {
+      drawer.classList.contains('open')
+        ? closeDrawer()
+        : openDrawer();
+    });
+
+    drawerClose.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeDrawer();
+    });
+
+    window.matchMedia('(max-width: 900px)')
+      .addEventListener('change', function (event) {
+        if (!event.matches) closeDrawer();
+      });
+  </script>
+</body>
+</html>

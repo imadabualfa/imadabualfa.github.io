@@ -890,7 +890,7 @@ html[data-theme="dark"] .theme-sun {
 /* ---------- EXPERIENCE ---------- */
 /* ---------- EXPERIENCE ---------- */
 .experience {
-  padding: 48px 0 24px;
+  padding: 24px 0 0px;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -919,6 +919,7 @@ html[data-theme="dark"] .theme-sun {
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s ease;
+  margin-left: auto;
 }
 
 .experience-cv:hover {
@@ -1252,4 +1253,38 @@ html[data-theme="dark"] .theme-sun {
 
 .drawer-email:hover {
   color: var(--saffron);
+}
+
+
+/* About page */
+.about-page {
+  box-sizing: border-box;
+  width: 84%;
+  max-width: 720px;
+  margin: 0;
+  margin-left: 8%;
+  padding: 64px 24px;
+}
+
+.about-intro {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.about-intro p {
+  margin: 0 0 20px;
+}
+
+.about-intro p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .about-page {
+    padding: 40px 20px;
+    margin-left: 0;
+    width: 100%;
+  }
 }
