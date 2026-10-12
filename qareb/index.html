@@ -68,6 +68,9 @@
 
     </div>
 
+    <div class="reading-progress" aria-hidden="true">
+      <div class="reading-progress-fill"></div>
+    </div>
 
     <!-- =========================
          MOBILE MENU
@@ -117,6 +120,38 @@
 
     </nav>
 
+    <script>
+      (function () {
+        const fill = document.querySelector('.reading-progress-fill');
+        if (!fill) return;
+    
+        let scheduled = false;
+    
+        function updateProgress() {
+          const page = document.scrollingElement;
+          const scrollableHeight = page.scrollHeight - page.clientHeight;
+    
+          const progress = scrollableHeight > 0
+            ? Math.min(1, Math.max(0, page.scrollTop / scrollableHeight))
+            : 0;
+    
+          fill.style.transform = `scaleX(${progress})`;
+          scheduled = false;
+        }
+    
+        window.addEventListener('scroll', function () {
+          if (!scheduled) {
+            scheduled = true;
+            requestAnimationFrame(updateProgress);
+          }
+        }, { passive: true });
+    
+        window.addEventListener('resize', updateProgress);
+        window.addEventListener('load', updateProgress);
+    
+        updateProgress();
+      })();
+    </script>
 
     <!-- =========================
          CASE STUDY
