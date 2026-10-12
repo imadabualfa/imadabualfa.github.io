@@ -68,6 +68,12 @@ html {
   box-sizing: border-box;
 }
 
+/* Scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--saffron) var(--cream);
+}
+
 body {
   margin: 0;
   padding: 0;
