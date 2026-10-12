@@ -79,3 +79,29 @@
     if (document.hidden) hideCursor();
   });
 })();
+
+(function () {
+  const cursor = document.getElementById('custom-cursor');
+  if (!cursor) return;
+
+  let clickAnimation;
+
+  document.addEventListener('pointerdown', function (event) {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+
+    if (clickAnimation) clickAnimation.cancel();
+
+    clickAnimation = cursor.animate(
+      [
+        { transform: 'translate(-50%, -50%) scale(1)', offset: 0 },
+        { transform: 'translate(-50%, -50%) scale(0.78)', offset: 0.3 },
+        { transform: 'translate(-50%, -50%) scale(1.08)', offset: 0.7 },
+        { transform: 'translate(-50%, -50%) scale(1)', offset: 1 }
+      ],
+      {
+        duration: 260,
+        easing: 'ease-out'
+      }
+    );
+  });
+})();
