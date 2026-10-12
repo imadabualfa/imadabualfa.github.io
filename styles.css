@@ -55,6 +55,11 @@ html[data-theme="dark"] .navbar::after {
   filter: invert(1);
 }
 
+.nav-links .H4[aria-current="page"],
+.drawer-links .H4[aria-current="page"] {
+  color: var(--saffron);
+}
+
 html {
   scroll-behavior: smooth;
 }
