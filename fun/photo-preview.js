@@ -98,4 +98,35 @@
       selectedPhoto.focus({ preventScroll: true });
     }
   });
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  
+  previewImage.addEventListener('touchstart', function (event) {
+    if (event.touches.length !== 1) {
+      touchStartX = null;
+      return;
+    }
+  
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+  }, { passive: true });
+  
+  previewImage.addEventListener('touchend', function (event) {
+    if (touchStartX === null || !event.changedTouches.length) return;
+  
+    const dx = event.changedTouches[0].clientX - touchStartX;
+    const dy = event.changedTouches[0].clientY - touchStartY;
+  
+    touchStartX = null;
+  
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+  
+    showPhoto(currentIndex + (dx < 0 ? 1 : -1));
+  }, { passive: true });
+  
+  previewImage.addEventListener('touchcancel', function () {
+    touchStartX = null;
+  });
+
 })();
