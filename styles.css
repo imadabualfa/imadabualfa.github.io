@@ -1436,7 +1436,7 @@ html[data-theme="dark"] .theme-sun {
     border-radius: 2px;
   }
 
-  .photo-preview-controls {
+  .photo-preview .photo-preview-controls {
     display: none;
   }
 }
