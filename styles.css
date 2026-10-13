@@ -1435,4 +1435,8 @@ html[data-theme="dark"] .theme-sun {
   .photo-item {
     border-radius: 2px;
   }
+
+  .photo-preview-controls {
+    display: none;
+  }
 }
