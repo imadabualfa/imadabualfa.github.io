@@ -17,6 +17,12 @@
   let cursorParent;
 
   function showPhoto(index) {
+    const navigating = preview.open;
+    const direction = index > currentIndex ? 1 : -1;
+    
+    previewImage.getAnimations().forEach(function (animation) {
+      animation.cancel();
+    });
     currentIndex = (index + photos.length) % photos.length;
 
     const photo = photos[currentIndex];
@@ -40,11 +46,34 @@
     }
 
     previewImage.decode().then(function () {
-      if (loadId === previewLoadId && preview.open) {
-        previewImage.style.opacity = '1';
+      if (loadId !== previewLoadId || !preview.open) return;
+    
+      previewImage.style.opacity = '1';
+    
+      if (
+        navigating &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ) {
+        previewImage.animate(
+          [
+            {
+              opacity: 0,
+              transform: `translateX(${direction * 24}px)`
+            },
+            {
+              opacity: 1,
+              transform: 'translateX(0)'
+            }
+          ],
+          {
+            duration: 220,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+          }
+        );
       }
     }).catch(function () {});
-  }
+
+    }
 
   gallery.addEventListener('click', function (event) {
     const item = event.target.closest('.photo-item');
