@@ -6,8 +6,10 @@
   if (!photos.length) return;
 
   const items = photos.map(function (photo) {
-    const item = document.createElement('div');
+    const item = document.createElement('button');
     item.className = 'photo-item';
+    item.type = 'button';
+    item.setAttribute('aria-label', `Preview ${photo.alt || 'photo'}`);
 
     const width = Number(photo.getAttribute('width'));
     const height = Number(photo.getAttribute('height'));
