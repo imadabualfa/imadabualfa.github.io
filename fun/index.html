@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fun - Imad Al Deen Abu Alfa</title>
+
+  <link rel="icon" type="image/png" href="../favicon.png">
+
+  <script src="../theme.js"></script>
+  <link rel="stylesheet" href="../buttons.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo-hover" onclick="window.location.href='../index.html'">
+      <img class="logo logo-black" src="../Logo.svg" alt="Imad Logo">
+      <img class="logo logo-yellow" src="../Logo-yellow.svg" alt="">
+    </div>
+
+    <div class="nav-links">
+      <a href="../index.html" class="H4">Work</a>
+      <a href="./index.html" class="H4" aria-current="page">About</a>
+    </div>
+
+    <div class="nav-actions">
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to light mode"
+        aria-pressed="false"
+      >
+        <span class="theme-moon" aria-hidden="true">☾</span>
+        <span class="theme-sun" aria-hidden="true">☀︎</span>
+      </button>
+
+      <a
+        class="nav-email email-link"
+        href="mailto:imad.abualfa.apps@gmail.com"
+      >
+        imad.abualfa.apps@gmail.com
+      </a>
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <nav class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <img class="logo" src="../Logo.svg" alt="Imad Logo">
+      <button
+        class="drawer-close"
+        id="drawerClose"
+        aria-label="Close menu"
+      >&times;</button>
+    </div>
+
+    <div class="drawer-links">
+      <a href="../index.html" class="H4">Work</a>
+      <a href="./index.html" class="H4" aria-current="page">About</a>
+    </div>
+
+    <a
+      class="drawer-email email-link"
+      href="mailto:imad.abualfa.apps@gmail.com"
+    >
+      imad.abualfa.apps@gmail.com
+    </a>
+  </nav>
+
+  <main class="fun-page">
+    <div class="photo-gallery">
+      <img src="photos/photo-1.webp" alt="Photo1">
+      <img src="photos/photo-2.webp" alt="Photo2">
+      <img src="photos/photo-3.webp" alt="Photo3">
+      <img src="photos/photo-4.webp" alt="Photo4">
+      <img src="photos/photo-5.webp" alt="Photo5">
+      <img src="photos/photo-6.webp" alt="Photo6">
+      <img src="photos/photo-7.webp" alt="Photo7">
+      <img src="photos/photo-8.webp" alt="Photo8">
+      <img src="photos/photo-9.webp" alt="Photo9">
+      <img src="photos/photo-10.webp" alt="Photo10">
+      <img src="photos/photo-11.webp" alt="Photo11">
+      <img src="photos/photo-12.webp" alt="Photo12">
+      <img src="photos/photo-13.webp" alt="Photo13">
+      <img src="photos/photo-14.webp" alt="Photo14">
+      <img src="photos/photo-15.webp" alt="Photo15">
+      <img src="photos/photo-16.webp" alt="Photo16">
+      <img src="photos/photo-17.webp" alt="Photo17">
+      <img src="photos/photo-18.webp" alt="Photo18">
+      <img src="photos/photo-19.webp" alt="Photo19">
+      <img src="photos/photo-20.webp" alt="Photo20">
+      <img src="photos/photo-21.webp" alt="Photo21">
+      <img src="photos/photo-22.webp" alt="Photo22">
+      <img src="photos/photo-23.webp" alt="Photo23">
+      <img src="photos/photo-24.webp" alt="Photo24">
+      <img src="photos/photo-25.webp" alt="Photo25">
+    </div>
+  </main>
+
+
+  <footer class="site-footer">
+    <span class="footer-name">Imad Al Deen Abu Alfa</span>
+
+    <div class="footer-links">
+      <a
+        class="email-link"
+        href="mailto:imad.abualfa.apps@gmail.com"
+      >
+        imad.abualfa.apps@gmail.com
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/imad-al-deen-abu-alfa/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn ↗
+      </a>
+    </div>
+  </footer>
+
+  <script src="../cursor.js"></script>
+  <script src="../email-copy.js"></script>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('mobile-drawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const drawerClose = document.getElementById('drawerClose');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', function () {
+      drawer.classList.contains('open')
+        ? closeDrawer()
+        : openDrawer();
+    });
+
+    drawerClose.addEventListener('click', closeDrawer);
+    overlay.addEventListener('click', closeDrawer);
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeDrawer();
+    });
+
+    window.matchMedia('(max-width: 900px)')
+      .addEventListener('change', function (event) {
+        if (!event.matches) closeDrawer();
+      });
+  </script>
+
+  <script src="masonry.js"></script>
+</body>
+</html>
