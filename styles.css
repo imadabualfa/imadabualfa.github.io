@@ -1392,6 +1392,53 @@ html[data-theme="dark"] .theme-sun {
   outline: 2px solid var(--saffron);
 }
 
+.photo-preview-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: rgba(13, 13, 13, 0.5);
+  color: #FFFDF7;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.photo-preview-prev {
+  left: 12px;
+}
+
+.photo-preview-next {
+  right: 12px;
+}
+
+.photo-preview-arrow:hover {
+  color: var(--saffron);
+}
+
+.photo-preview-arrow:focus-visible {
+  outline: 2px solid var(--saffron);
+}
+
+@media (max-width: 640px) {
+  .photo-preview-arrow {
+    top: auto;
+    bottom: 4px;
+    transform: none;
+  }
+
+  .photo-preview-prev {
+    left: calc(50% - 48px);
+  }
+
+  .photo-preview-next {
+    right: calc(50% - 48px);
+  }
+}
+
 @media (max-width: 1440px) {
   .photo-gallery {
     --columns: 6;
