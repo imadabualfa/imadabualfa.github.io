@@ -8,6 +8,7 @@
   let selectedPhoto;
   let cursor;
   let cursorParent;
+  let previewLoadId = 0;
 
   gallery.addEventListener('click', function (event) {
     const item = event.target.closest('.photo-item');
@@ -17,8 +18,17 @@
     if (!photo || !photo.naturalWidth) return;
 
     selectedPhoto = item;
+    const loadId = ++previewLoadId;
+
+    previewImage.style.opacity = '0';
     previewImage.src = photo.currentSrc || photo.src;
     previewImage.alt = photo.alt;
+    
+    previewImage.decode().then(function () {
+      if (loadId === previewLoadId && preview.open) {
+        previewImage.style.opacity = '1';
+      }
+    }).catch(function () {});
 
     previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
