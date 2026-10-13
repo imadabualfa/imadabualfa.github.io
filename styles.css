@@ -1318,6 +1318,32 @@ html[data-theme="dark"] .theme-sun {
   overflow: hidden;
   border-radius: 4px;
   background: rgba(var(--ink-rgb), 0.06);
+  animation: photo-loading 1.8s ease-in-out infinite;
+}
+
+@keyframes photo-loading {
+  0%, 100% {
+    background-color: rgba(var(--ink-rgb), 0.04);
+  }
+
+  50% {
+    background-color: rgba(var(--ink-rgb), 0.09);
+  }
+}
+
+.photo-item.is-loaded,
+.photo-item.is-error {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-item {
+    animation: none;
+  }
+
+  .photo-gallery img {
+    transition: none;
+  }
 }
 
 .photo-gallery img {
