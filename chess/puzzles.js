@@ -61,5 +61,33 @@ window.CHESS_PUZZLES = [
       'Rd8 sets up the rook on the back rank. After answering the knight check with Kc2, Nf6# delivers double check from the knight and rook.',
   
     gameUrl: 'https://lichess.org/SO9uwGCU/white#0'
+  },
+
+  {
+    id: 'bishop-sacrifice-rook-mate',
+    color: 'black',
+  
+    fen: 'r1b1kr2/pppp2pp/8/3QP3/4n2q/7P/PPP2bP1/RNB2R1K w - - 1 12',
+  
+    setup: 'b1c3',
+  
+    solution: [
+      'e4g3', // 12...Ng3+
+      'h1h2', // 13.Kh2
+      'g3f1', // 13...Nxf1+
+      'h2h1', // 14.Kh1
+      'f1g3', // 14...Ng3+
+      'h1h2', // 15.Kh2
+      'f2g1', // 15...Bg1+
+      'h2g1', // 16.Kxg1
+      'f8f1', // 16...Rf1+
+      'g1h2', // 17.Kh2
+      'f1h1'  // 17...Rh1#
+    ],
+  
+    explanation:
+      'The knight captures the defending rook, then returns to g3. The bishop sacrifice draws the king onto g1, allowing ...Rf1+ and ...Rh1#. The knight protects the rook on h1.',
+  
+    gameUrl: 'https://lichess.org/eQ9gGOIv/black#0'
   }
 ];
