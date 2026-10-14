@@ -1456,7 +1456,7 @@ html[data-theme="dark"] .theme-sun {
   display: grid;
   --board-size: clamp(220px, calc(100dvh - 180px), 520px);
   grid-template-columns: minmax(0, var(--board-size)) minmax(240px, 1fr);
-  align-items: start;
+  align-items: stretch;
   gap: 32px;
   margin-top: 0;
 }
@@ -1494,7 +1494,7 @@ html[data-theme="dark"] .theme-sun {
   display: flex;
   gap: 8px;
   margin-top: 8px;
-  width: min(100%, 440px);
+  width: 100%;
 }
 
 .chess-controls button {
@@ -1515,6 +1515,8 @@ html[data-theme="dark"] .theme-sun {
 
 .puzzle-panel {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .chess-board-column {
@@ -1531,4 +1533,50 @@ html[data-theme="dark"] .theme-sun {
     grid-template-columns: 1fr;
     gap: 24px;
   }
+
+  .puzzle-navigation {
+    margin-top: 24px;
+    padding-top: 0;
+  }
+}
+
+.puzzle-navigation {
+  margin-top: auto;
+  padding-top: 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#puzzle-count {
+  margin: 0 0 8px;
+  color: var(--secondary-text);
+}
+
+#puzzle-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#puzzle-numbers button {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+}
+
+#puzzle-numbers button[aria-current="step"] {
+  border-color: var(--saffron);
+  color: var(--saffron);
+}
+
+#puzzle-numbers button:focus-visible {
+  outline: 2px solid var(--saffron);
+  outline-offset: 2px;
 }

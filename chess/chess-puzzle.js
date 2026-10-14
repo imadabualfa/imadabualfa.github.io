@@ -205,6 +205,16 @@
       result.hidden = true;
       solutionButton.disabled = false;
       nextButton.style.display = puzzles.length > 1 ? '' : 'none';
+      puzzleCount.textContent =
+        `Puzzle ${puzzleIndex + 1} of ${puzzles.length}`;
+      
+      puzzleButtons.forEach(function (button, index) {
+        if (index === puzzleIndex) {
+          button.setAttribute('aria-current', 'step');
+        } else {
+          button.removeAttribute('aria-current');
+        }
+      });
 
       refreshBoard();
 
@@ -229,11 +239,30 @@
       startPuzzle();
     });
 
-    startPuzzle();
-  } catch (error) {
-    status.textContent =
-      'The chessboard couldn’t load. Please refresh the page.';
+    const puzzleCount = document.getElementById('puzzle-count');
+    const puzzleNumbers = document.getElementById('puzzle-numbers');
 
-    console.error(error);
-  }
+    const puzzleButtons = puzzles.map(function (entry, index) {
+        const button = document.createElement('button');
+  
+        button.type = 'button';
+        button.textContent = index + 1;
+        button.setAttribute('aria-label', `Open puzzle ${index + 1}`);
+  
+        button.addEventListener('click', function () {
+          puzzleIndex = index;
+          startPuzzle();
+        });
+  
+        puzzleNumbers.appendChild(button);
+        return button;
+      });
+  
+      startPuzzle();
+    } catch (error) {
+      status.textContent =
+        'The chessboard couldn’t load. Please refresh the page.';
+  
+      console.error(error);
+    }
 })();
