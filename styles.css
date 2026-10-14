@@ -1447,3 +1447,82 @@ html[data-theme="dark"] .theme-sun {
     display: none;
   }
 }
+
+
+/* Chess page */
+.chess-puzzle {
+  display: grid;
+  grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+#puzzle-status {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--secondary-text);
+}
+
+#chess-board {
+  width: min(100%, 440px);
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+#chess-board cg-board {
+  background-color: #FFFDF7;
+  background-image: conic-gradient(
+    #BDB7A5 25%,
+    #FFFDF7 0 50%,
+    #BDB7A5 0 75%,
+    #FFFDF7 0
+  );
+  background-size: 25% 25%;
+}
+
+#chess-board square.last-move {
+  background-color: rgba(214, 163, 58, 0.35);
+}
+
+.chess-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  width: min(100%, 440px);
+}
+
+.chess-controls button {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0 8px;
+}
+
+.about-page.chess-page {
+  max-width: 1040px;
+}
+
+.puzzle-panel {
+  min-width: 0;
+}
+
+.chess-board-column {
+  min-width: 0;
+}
+
+#puzzle-status {
+  margin-top: 0;
+}
+
+#puzzle-result {
+  margin-top: 24px;
+}
+
+@media (max-width: 800px) {
+  .chess-puzzle {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
