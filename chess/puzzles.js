@@ -33,7 +33,7 @@ window.CHESS_PUZZLES = [
     ],
   
     explanation:
-      'From my only win against an International Master. After a messy game, I was able to find a simple forced mate.',
+      'From my only win against an IM "International Master". After a messy game, I was able to find a simple forced mate.',
   
     gameUrl: 'https://lichess.org/MNLsc14a/black#0'
   },
