@@ -1303,8 +1303,8 @@ html[data-theme="dark"] .theme-sun {
   }
 }
 
-/* Explorations page */
-.explorations-page {
+/* Snippets page */
+.snippets-page {
   padding: 0 32px 64px;
 }
 
@@ -1430,7 +1430,7 @@ html[data-theme="dark"] .theme-sun {
 }
 
 @media (max-width: 640px) {
-  .explorations-page {
+  .snippets-page {
     padding: 0 20px 40px;
   }
 
