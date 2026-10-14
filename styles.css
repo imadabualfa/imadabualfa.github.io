@@ -221,6 +221,9 @@ a {
   z-index: 10001;
   opacity: 0;
   transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #copy-toast.show {
@@ -1300,8 +1303,8 @@ html[data-theme="dark"] .theme-sun {
   }
 }
 
-/* Fun page */
-.fun-page {
+/* Explorations page */
+.explorations-page {
   padding: 0 32px 64px;
 }
 
@@ -1427,7 +1430,7 @@ html[data-theme="dark"] .theme-sun {
 }
 
 @media (max-width: 640px) {
-  .fun-page {
+  .explorations-page {
     padding: 0 20px 40px;
   }
 
