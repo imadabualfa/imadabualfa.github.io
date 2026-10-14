@@ -1452,13 +1452,15 @@ html[data-theme="dark"] .theme-sun {
 /* Chess page */
 .chess-puzzle {
   display: grid;
-  grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
+  --board-size: clamp(220px, calc(100dvh - 240px), 440px);
+  grid-template-columns: minmax(0, var(--board-size)) minmax(0, 1fr);
   align-items: start;
   gap: 32px;
-  margin-top: 32px;
+  margin-top: 0;
 }
 
 #puzzle-status {
+  margin-top: 24px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 14px;
   line-height: 1.6;
@@ -1466,7 +1468,7 @@ html[data-theme="dark"] .theme-sun {
 }
 
 #chess-board {
-  width: min(100%, 440px);
+  width: 100%;
   aspect-ratio: 1;
   margin: 0;
 }
@@ -1510,10 +1512,7 @@ html[data-theme="dark"] .theme-sun {
 
 .chess-board-column {
   min-width: 0;
-}
-
-#puzzle-status {
-  margin-top: 0;
+  width: min(100%, var(--board-size));
 }
 
 #puzzle-result {
