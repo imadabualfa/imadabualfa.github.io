@@ -330,8 +330,10 @@ a {
   position: relative;
 }
 
-.theme-toggle:hover {
-  color: var(--saffron);
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover {
+    color: var(--saffron);
+  }
 }
 
 .theme-toggle:focus-visible {
@@ -1452,8 +1454,8 @@ html[data-theme="dark"] .theme-sun {
 /* Chess page */
 .chess-puzzle {
   display: grid;
-  --board-size: clamp(220px, calc(100dvh - 240px), 440px);
-  grid-template-columns: minmax(0, var(--board-size)) minmax(0, 1fr);
+  --board-size: clamp(220px, calc(100dvh - 180px), 520px);
+  grid-template-columns: minmax(0, var(--board-size)) minmax(240px, 1fr);
   align-items: start;
   gap: 32px;
   margin-top: 0;
@@ -1491,19 +1493,24 @@ html[data-theme="dark"] .theme-sun {
 .chess-controls {
   display: flex;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 8px;
   width: min(100%, 440px);
 }
 
 .chess-controls button {
   flex: 1 1 0;
   min-width: 0;
+  height: 36px;
   margin: 0;
   padding: 0 8px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .about-page.chess-page {
   max-width: 1040px;
+  padding-top: 32px;
+  padding-bottom: 24px;
 }
 
 .puzzle-panel {
