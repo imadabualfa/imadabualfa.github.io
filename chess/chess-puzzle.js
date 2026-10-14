@@ -231,7 +231,11 @@
     });
 
     solutionButton.addEventListener('click', function () {
-      startPuzzle(true);
+      if (busy || solutionButton.disabled) return;
+    
+      revealing = true;
+      solutionButton.disabled = true;
+      continuePuzzle();
     });
 
     nextButton.addEventListener('click', function () {
