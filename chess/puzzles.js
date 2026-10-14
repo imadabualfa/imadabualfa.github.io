@@ -89,5 +89,27 @@ window.CHESS_PUZZLES = [
       'The knight captures the defending rook, then returns to g3. The bishop sacrifice draws the king onto g1, allowing ...Rf1+ and ...Rh1#. The knight protects the rook on h1.',
   
     gameUrl: 'https://lichess.org/eQ9gGOIv/black#0'
+  },
+
+  {
+    id: 'legal-mate-black',
+    color: 'black',
+  
+    fen: 'r1bqk2r/ppp2ppp/2p2n2/2b5/4P3/3P4/PPP2PPP/RNBQKB1R w KQkq - 1 6',
+  
+    setup: 'c1g5',
+  
+    solution: [
+      'f6e4', // 6...Nxe4
+      'g5d8', // 7.Bxd8
+      'c5f2', // 7...Bxf2+
+      'e1e2', // 8.Ke2
+      'c8g4'  // 8...Bg4#
+    ],
+  
+    explanation:
+      '...Nxe4 offers the queen on d8. After White takes it, ...Bxf2+ forces Ke2, and ...Bg4# finishes the mating net with both bishops and the knight.',
+  
+    gameUrl: 'https://lichess.org/kbZolRQX/black#0'
   }
 ];
