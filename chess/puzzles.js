@@ -39,7 +39,7 @@ window.CHESS_PUZZLES = [
       'The knight and queen force the king into the corner. After ...Qg1+, White must capture with the rook. ...Nf2# finishes the smothered mate: White’s own rook and pawns block every escape.',
 
     gameUrl: 'https://lichess.org/hSfzktF8/black#0'
-  }
+  },
 
   {
     id: 'knight-double-check',
