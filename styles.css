@@ -1580,3 +1580,23 @@ html[data-theme="dark"] .theme-sun {
   outline: 2px solid var(--saffron);
   outline-offset: 2px;
 }
+
+/* Legal moves: dots on empty squares */
+#chess-board square.move-dest {
+  background: radial-gradient(
+    circle,
+    rgba(13, 13, 13, 0.25) 19%,
+    transparent 20%
+  );
+}
+
+/* Legal captures: rings around occupied squares */
+#chess-board square.move-dest.oc {
+  background: radial-gradient(
+    circle,
+    transparent 60%,
+    rgba(13, 13, 13, 0.25) 61%,
+    rgba(13, 13, 13, 0.25) 70%,
+    transparent 71%
+  );
+}

@@ -71,10 +71,9 @@
         },
         movable: {
           free: false,
+          showDests: true,
           dests: new Map(),
-          events: {
-            after: handleMove
-          }
+          events: { after: handleMove }
         },
         premovable: {
           enabled: false
