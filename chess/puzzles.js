@@ -40,4 +40,26 @@ window.CHESS_PUZZLES = [
 
     gameUrl: 'https://lichess.org/hSfzktF8/black#0'
   }
+
+  {
+    id: 'knight-double-check',
+    color: 'white',
+  
+    fen: '4N1k1/5pbp/b5p1/p7/5B2/2P2P1P/PP6/2KR3n b - - 0 21',
+  
+    setup: 'h1f2',
+  
+    solution: [
+      'd1d8', // 22.Rd8
+      'f2d3', // 22...Nd3+
+      'c1c2', // 23.Kc2
+      'd3f4', // 23...Nxf4
+      'e8f6'  // 24.Nf6#
+    ],
+  
+    explanation:
+      'Rd8 sets up the rook on the back rank. After answering the knight check with Kc2, Nf6# delivers double check from the knight and rook.',
+  
+    gameUrl: 'https://lichess.org/SO9uwGCU/white#0'
+  }
 ];
