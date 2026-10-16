@@ -53,7 +53,7 @@
 
       button.style.setProperty(
         '--grain-opacity',
-        strength * 0.64
+        strength * 0.5
       );
     });
   });
