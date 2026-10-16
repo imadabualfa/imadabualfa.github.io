@@ -101,17 +101,20 @@
     function finish() {
       busy = true;
       refreshBoard();
-
+    
       status.textContent = revealing
         ? 'Solution shown. Try again when you’re ready.'
         : game.isCheckmate()
           ? 'Checkmate. You found it!'
           : 'Correct. Puzzle solved!';
-
+    
       explanation.textContent = puzzle.explanation;
       gameLink.href = puzzle.gameUrl;
       result.hidden = false;
       solutionButton.disabled = true;
+      solutionButton.classList.replace('light-mid', 'black-mid');
+    
+      nextButton.classList.replace('black-mid', 'light-mid');
     }
 
     function continuePuzzle() {
@@ -187,6 +190,8 @@
     }
 
     function startPuzzle(showSolution = false) {
+      nextButton.classList.replace('light-mid', 'black-mid');
+      solutionButton.classList.replace('black-mid', 'light-mid');
       clearTimeout(timer);
 
       puzzle = puzzles[puzzleIndex];

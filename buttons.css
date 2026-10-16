@@ -1,183 +1,137 @@
-.black-mid {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    background-color: var(--ink);
-    border: 2px solid transparent;
-    border-radius: 2px;
-
-    color: var(--cream);
-
-    height: 46px;
-    padding: 0 20px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-
-    margin: 4px 2px;
-    cursor: pointer;
-    
-    transition:
-    color 0.35s ease;
-}
-
-.black-mid::before {
-    content: '';
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-
-    width: 170%;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-    background-color: var(--cream);
-
-    transform:
-        translate(-50%, -50%)
-        scale(0);
-
-    transition:
-        transform 0.55s var(--ease);
-
-    z-index: -1;
-}
-
-.light-mid {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    text-decoration: none;
-
-    background-color: var(--saffron);
-    border: 2px solid transparent;
-    border-radius: 2px;
-
-    color: var(--on-saffron);
-
-    height: 46px;
-    width: fit-content;
-    padding: 0 20px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
-
-    margin: 4px 2px;
-    cursor: pointer;
-
-    transition:
-        border-color 0.35s ease;
-}
-
-.light-mid::before {
-    content: '';
-
-    position: absolute;
-    left: 50%;
-    top: 50%;
-
-    width: 160%;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-    background-color: var(--cream);
-
-    transform:
-        translate(-50%, -50%)
-        scale(0);
-
-    transition:
-        transform 0.55s var(--ease);
-
-    z-index: -1;
-}
-
-.cv-button {
-    white-space: nowrap;
-    margin-left: auto;
-}
-
+/* Shared button styles */
+.black-mid,
+.light-mid,
 .black-mid-outline {
-    background-color: transparent;
-    border: 1px solid var(--ink);
-    border-radius: 6px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 
-    color: var(--ink);
+  height: 46px;
+  padding: 0 20px;
+  margin: 4px 2px;
 
-    height: 46px;
-    padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    text-align: center;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
 
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
+  cursor: pointer;
 
-    margin: 4px 2px;
-    cursor: pointer;
+  --hover-grain: var(--saffron);
 
-    transition:
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        color 0.3s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    scale 0.15s ease;
 }
 
-/* Drawer's light button needs to sit flush within the sidebar */
+.black-mid:active,
+.light-mid:active,
+.black-mid-outline:active {
+  scale: 0.97;
+}
+
+/* Black button — becomes light in dark mode */
+.black-mid {
+  background-color: var(--ink);
+  border: 2px solid transparent;
+  border-radius: 2px;
+  color: var(--cream);
+}
+
+/* Yellow button */
+.light-mid {
+  background-color: var(--saffron);
+  border: 2px solid transparent;
+  border-radius: 2px;
+  color: var(--on-saffron);
+
+  width: fit-content;
+  text-decoration: none;
+
+  --hover-grain: #FFFDF7;
+}
+
+/* The black button becomes white in dark mode */
+html[data-theme="dark"] .black-mid {
+  --hover-grain: #0D0D0D;
+}
+
+/* Outline button */
+.black-mid-outline {
+  background-color: transparent;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  color: var(--ink);
+
+  text-align: center;
+  text-decoration: none;
+}
+
+/* CV button alignment */
+.cv-button {
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Drawer button */
 .drawer-cta {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
-/* Hover effects for mouse-controlled devices */
+/* Disabled buttons */
+.black-mid:disabled,
+.light-mid:disabled,
+.black-mid-outline:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Grain follows the cursor, behind the text */
+.black-mid::before,
+.light-mid::before,
+.black-mid-outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle 70px at var(--pointer-x, 50%) var(--pointer-y, 50%),
+    var(--hover-grain) 0%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: var(--grain-texture);
+  mask-image: var(--grain-texture);
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Grain responds to a nearby mouse */
 @media (hover: hover) and (pointer: fine) {
-  .black-mid:hover::before {
-    transform: translate(-50%, -50%) scale(1);
+  .black-mid:not(:disabled)::before,
+  .light-mid:not(:disabled)::before,
+  .black-mid-outline:not(:disabled)::before {
+    opacity: var(--grain-opacity, 0);
   }
+}
 
-  .black-mid:hover {
-    background-color: var(--cream);
-    border-color: var(--saffron);
-    color: var(--saffron);
-
-    transition:
-      color 0.35s ease,
-      border-color 0.35s ease,
-      background-color 0s 0.48s;
-  }
-
-  .light-mid:hover::before {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  .light-mid:hover {
-    background-color: var(--cream);
-    border-color: var(--ink);
-    color: var(--ink);
-
-    transition:
-      border-color 0.35s ease,
-      background-color 0s 0.48s;
-  }
-
-  .black-mid-outline:hover {
-    background-color: var(--saffron);
-    border-color: var(--saffron);
-    color: var(--ink);
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .black-mid,
+  .light-mid,
+  .black-mid-outline,
+  .black-mid::before,
+  .light-mid::before,
+  .black-mid-outline::before {
+    transition: none;
   }
 }
